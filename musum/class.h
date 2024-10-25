@@ -6,8 +6,16 @@
 #include <string>
 #include <algorithm> // 用于 std::find_if
 #include <cstdlib>   // 用于调用 system 函数打开图片
+#define CSI "\033["
 
 const int CONSOLE_WIDTH = 80;
+
+//清理屏幕
+void flush()
+{
+    std::cout << CSI << "2J";
+    std::cout << CSI << 0 << ';' << 0 << 'H';
+}
 
 std::string centerText(const std::string& text) {
     int padding = (CONSOLE_WIDTH - text.length()) / 2;
@@ -84,7 +92,6 @@ public:
         return;
 #endif
         std::system(command.c_str());
-        std::system("pause");
     }
 };
 
@@ -143,8 +150,9 @@ public:
             return;
         }
         for (const auto& exhibit : exhibits) {
+            flush();
             exhibit.display();
-            std::cout << centerText("-----------------------------") << "\n";
+            std::cin.ignore();
         }
     }
 

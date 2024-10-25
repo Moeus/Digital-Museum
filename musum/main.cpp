@@ -1,6 +1,7 @@
 #include "class.h"
 
 //添加展品
+
 void addExhibitToMuseum(Museum& museum) {
     int id;
     std::string name, category, description, imagePath;
@@ -27,6 +28,7 @@ void addExhibitToMuseum(Museum& museum) {
     Exhibit exhibit(id, name, category, description, imagePath);
     museum.addExhibit(exhibit);
     std::cout << centerText("Exhibit added successfully!") << "\n";
+    std::cin.ignore();
 }
 
 // 查询展品
@@ -60,6 +62,8 @@ void searchExhibitInMuseum(Museum& museum) {
     else {
         std::cout << centerText("Invalid option!") << "\n";
     }
+    std::cin.ignore();
+    std::cin.ignore();
 }
 
 // 删除展品
@@ -68,6 +72,8 @@ void deleteExhibitFromMuseum(Museum& museum) {
     std::cout << centerText("Enter exhibit ID to remove: ");
     std::cin >> id;
     museum.removeExhibit(id);
+    std::cin.ignore();
+    std::cin.ignore();
 }
 
 // 主程序
@@ -91,18 +97,23 @@ int main() {
             << centerText("5. Exit") << "\n"
             << centerText("Enter your choice: ");
         std::cin >> choice;
+        std::cin.ignore();
 
         switch (choice) {
         case 1:
+            flush();
             addExhibitToMuseum(museum);
             break;
         case 2:
+            flush();
             searchExhibitInMuseum(museum);
             break;
         case 3:
+            flush();
             deleteExhibitFromMuseum(museum);
             break;
         case 4:
+            flush();
             museum.displayAll();
             break;
         case 5:
@@ -110,8 +121,10 @@ int main() {
             std::cout << centerText("Goodbye!") << "\n";
             break;
         default:
+            flush();
             std::cout << centerText("Invalid choice!") << "\n";
         }
+        flush();
     } while (choice != 5);
 
     return 0;
