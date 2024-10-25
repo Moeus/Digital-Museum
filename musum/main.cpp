@@ -13,6 +13,7 @@ void addExhibitToMuseum(Museum& museum) {
         if (id == ID)
         {
             std::cout << centerText("IDÒÑ´æÔÚ\n");
+            std::cin.ignore();
             return;
         }
     }

@@ -8,7 +8,7 @@
 #include <cstdlib>   // 用于调用 system 函数打开图片
 #define CSI "\033["
 
-const int CONSOLE_WIDTH = 80;
+const int CONSOLE_WIDTH = 120;
 
 //清理屏幕
 void flush()
