@@ -96,6 +96,7 @@ public:
     // 添加展品
     void addExhibit(const Exhibit& exhibit) {
         exhibits.push_back(exhibit);
+        ID_pramery.push_back(exhibit.getId());
     }
 
     // 删除展品

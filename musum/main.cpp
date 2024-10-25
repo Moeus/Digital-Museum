@@ -1,4 +1,6 @@
 #include "class.h"
+
+//ÃÌº”’π∆∑
 void addExhibitToMuseum(Museum& museum) {
     int id;
     std::string name, category, description, imagePath;
