@@ -1,0 +1,10 @@
+1|青铜器|文物|中国古代的青铜制礼器，常用于宗教和仪式活动|picture\bell.png
+2|瓷器|陶瓷|中国传统的高温烧制工艺器皿，以其坚硬和光泽著称|picture\porcelain.png
+3|丝绸之路地图|文物|描述了古代丝绸之路沿途国家的地图|picture\ancient_map.png
+4|兵马俑|雕塑|秦始皇陵的陪葬陶俑，象征着古代的军队|terracotta_warrior.jpg
+5|山水画|绘画|描绘中国传统山水风景的画作|landscape_painting.jpg
+6|书法作品|书法|唐代著名书法家王羲之的作品|calligraphy.jpg
+7|花瓶|陶瓷|明代的青花瓷花瓶，具有历史和艺术价值|vase.jpg
+8|玉器|文物|用优质玉石制作的工艺品，象征富贵和平|jade.jpg
+9|古籍|书籍|宋代印刷的线装书，记载了古代文化和历史|ancient_book.jpg
+10|陶俑|雕塑|汉代的陶俑，展示了当时的服饰与风俗|clay_statue.jpg
