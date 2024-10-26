@@ -41,10 +41,10 @@ public:
 
     // 展示展品信息
     void display() const {
-        std::cout << centerText("Exhibit ID: " + std::to_string(id)) << "\n"
-            << centerText("Name: " + name) << "\n"
-            << centerText("Category: " + category) << "\n"
-            << centerText("Description: " + description) << "\n";
+        std::cout << centerText("展品ID: " + std::to_string(id)) << "\n"
+            << centerText("名称: " + name) << "\n"
+            << centerText("分类: " + category) << "\n"
+            << centerText("描述: " + description) << "\n";
 
         if (!imagePath.empty()) {
             std::cout << centerText("Image Path: " + imagePath) << "\n";
@@ -126,10 +126,10 @@ public:
         if (it != exhibits.end()) {
             exhibits.erase(it);
             ID_pramery.erase(std::find(ID_pramery.begin(), ID_pramery.end(), id));
-            std::cout << centerText("Exhibit with ID " + std::to_string(id) + " removed.") << "\n";
+            std::cout << centerText("ID为 " + std::to_string(id) + " 的展品已被移除。") << "\n";
         }
         else {
-            std::cout << centerText("Exhibit with ID " + std::to_string(id) + " not found.") << "\n";
+            std::cout << centerText("ID为 " + std::to_string(id) + " 未找到。") << "\n";
         }
         
     }
@@ -141,7 +141,7 @@ public:
                 return &exhibit;
             }
         }
-        std::cout << centerText("Exhibit with ID " + std::to_string(id) + " not found.") << "\n";
+        std::cout << centerText("ID为 " + std::to_string(id) + " 的展品未找到") << "\n";
         return nullptr;
     }
 
@@ -152,14 +152,14 @@ public:
                 return &exhibit;
             }
         }
-        std::cout << centerText("Exhibit with name " + name + " not found.") << "\n";
+        std::cout << centerText("名称为 " + name + " 的展品未找到") << "\n";
         return nullptr;
     }
 
     // 显示所有展品信息
     void displayAll() const {
         if (exhibits.empty()) {
-            std::cout << centerText("No exhibits found.") << "\n";
+            std::cout << centerText("无展品") << "\n";
             return;
         }
         for (const auto& exhibit : exhibits) {
@@ -188,7 +188,7 @@ public:
         }
 
         file.close(); // 关闭文件
-        std::cout << centerText("Exhibits saved to file successfully!") << "\n";
+        std::cout << centerText("展品信息写入成功!") << "\n";
     }
 
     // 从文件加载展品信息
@@ -224,6 +224,6 @@ public:
             ID_pramery.push_back(exhibit.getId());
         }
         file.close(); // 关闭文件
-        std::cout << centerText("Exhibits loaded from file successfully!") << "\n";
+        std::cout << centerText("展品信息加载完成!") << "\n";
     }
 };
