@@ -8,7 +8,7 @@ void addExhibitToMuseum(Museum& museum) {
     std::cout << centerText("Enter exhibit ID: ");
     std::cin >> id;
     std::cin.ignore(); // 忽略换行符
-    if(!museum.ID_acceptable(id))
+    if(!museum.ID_acceptable(id))//ID的主键约束，避免ID重复
     {
         std::cout << centerText("ID已存在\n");
         std::cin.ignore();
