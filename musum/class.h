@@ -98,14 +98,27 @@ public:
 class Museum {
 private:
     std::vector<Exhibit> exhibits; // 展品列表
-public:
     std::vector<int> ID_pramery;
+public:
+
     // 添加展品
     void addExhibit(const Exhibit& exhibit) {
         exhibits.push_back(exhibit);
         ID_pramery.push_back(exhibit.getId());
     }
-
+    
+    bool ID_acceptable(int id)
+    {
+        for (auto ID : ID_pramery)
+        {
+            if (id == ID)
+            {
+                
+                return false;
+            }
+        }
+        return true;
+    }
     // 删除展品
     void removeExhibit(int id) {
         auto it = std::find_if(exhibits.begin(), exhibits.end(),

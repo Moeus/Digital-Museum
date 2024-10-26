@@ -8,14 +8,11 @@ void addExhibitToMuseum(Museum& museum) {
     std::cout << centerText("Enter exhibit ID: ");
     std::cin >> id;
     std::cin.ignore(); // 忽略换行符
-    for (auto ID : museum.ID_pramery)
+    if(!museum.ID_acceptable(id))
     {
-        if (id == ID)
-        {
-            std::cout << centerText("ID已存在\n");
-            std::cin.ignore();
-            return;
-        }
+        std::cout << centerText("ID已存在\n");
+        std::cin.ignore();
+        return;
     }
     std::cout << centerText("Enter exhibit name: ");
     std::getline(std::cin, name);
@@ -29,6 +26,7 @@ void addExhibitToMuseum(Museum& museum) {
     Exhibit exhibit(id, name, category, description, imagePath);
     museum.addExhibit(exhibit);
     std::cout << centerText("Exhibit added successfully!") << "\n";
+    museum.saveToFile("exhibits.txt");
     std::cin.ignore();
 }
 
